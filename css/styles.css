@@ -1,0 +1,94 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    max-width: 8.5in;
+    margin: 0 auto;
+    padding: 0.5in;
+    color: #333;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.name {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.contact {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.title {
+    font-size: 20px;
+    color: white;
+    background-color: #00A3E0;
+    padding: 8px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+.section-header {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.company {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.role {
+    font-style: italic;
+    color: #666;
+}
+
+.date {
+    float: right;
+    color: #666;
+}
+
+.bullet {
+    margin-left: 20px;
+    margin-bottom: 8px;
+}
+
+.divider {
+    border-top: 1px solid #ddd;
+    margin: 20px 0;
+}
+
+.competencies {
+    margin: 10px 0;
+    line-height: 1.8;
+}
+
+.bullet-symbol {
+    color: #00A3E0;
+    margin-right: 5px;
+}
+
+.location {
+    font-style: normal;
+    color: #666;
+}
+
+@media print {
+    body {
+        padding: 0.25in;
+    }
+    
+    .title {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+}
