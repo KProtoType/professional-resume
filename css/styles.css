@@ -1,94 +1,172 @@
+/* Base styles */
+:root {
+    --primary-color: #1a365d;    /* Deep navy */
+    --secondary-color: #00A3E0;  /* Your original blue */
+    --accent-color: #2c5282;     /* Medium blue */
+    --text-primary: #2d3748;     /* Dark gray for main text */
+    --text-secondary: #4a5568;   /* Medium gray for secondary text */
+    --background-light: #f7fafc; /* Light gray for sections */
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     line-height: 1.6;
     max-width: 8.5in;
     margin: 0 auto;
     padding: 0.5in;
-    color: #333;
+    color: var(--text-primary);
+    background: white;
 }
 
+/* Header styling */
 .header {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
+    padding: 2rem 0;
+    border-bottom: 3px solid var(--primary-color);
 }
 
 .name {
-    font-size: 24px;
+    font-size: 32px;
     font-weight: bold;
-    margin-bottom: 5px;
+    color: var(--primary-color);
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
 }
 
 .contact {
-    color: #333;
-    margin-bottom: 10px;
+    color: var(--text-secondary);
+    font-size: 16px;
+    margin: 0.5rem 0;
 }
 
+/* Section titles */
 .title {
     font-size: 20px;
     color: white;
-    background-color: #00A3E0;
-    padding: 8px;
-    margin: 20px 0;
-    text-align: center;
+    background-color: var(--primary-color);
+    padding: 0.5rem 1rem;
+    margin: 2rem 0 1rem 0;
+    border-radius: 3px;
+    letter-spacing: 0.5px;
 }
 
+/* Content sections */
 .section {
-    margin-bottom: 20px;
+    margin-bottom: 1.5rem;
+    padding: 0 0.5rem;
 }
 
-.section-header {
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 5px;
-    margin-bottom: 15px;
-}
-
+/* Company and role styling */
 .company {
+    font-size: 18px;
     font-weight: bold;
-    margin-bottom: 5px;
+    color: var(--primary-color);
+    margin: 1.5rem 0 0.25rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
 }
 
 .role {
-    font-style: italic;
-    color: #666;
+    font-size: 16px;
+    color: var(--secondary-color);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
 }
 
 .date {
-    float: right;
-    color: #666;
+    color: var(--text-secondary);
+    font-weight: normal;
+    font-size: 0.9em;
 }
 
+/* Bullet points */
 .bullet {
-    margin-left: 20px;
-    margin-bottom: 8px;
-}
-
-.divider {
-    border-top: 1px solid #ddd;
-    margin: 20px 0;
-}
-
-.competencies {
-    margin: 10px 0;
-    line-height: 1.8;
+    margin: 0.75rem 0 0.75rem 1.5rem;
+    position: relative;
+    line-height: 1.5;
 }
 
 .bullet-symbol {
-    color: #00A3E0;
-    margin-right: 5px;
+    color: var(--secondary-color);
+    position: absolute;
+    left: -1.2rem;
+    top: 0;
 }
 
+/* Core competencies */
+.competencies {
+    margin: 1rem 0;
+    line-height: 1.8;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.competencies span {
+    background-color: var(--background-light);
+    padding: 0.3rem 0.8rem;
+    border-radius: 3px;
+    font-size: 0.95em;
+}
+
+/* Location styling */
 .location {
+    color: var(--text-secondary);
+    font-weight: normal;
     font-style: normal;
-    color: #666;
+    font-size: 0.9em;
 }
 
+/* Executive summary emphasis */
+.executive-summary {
+    font-size: 1.1em;
+    line-height: 1.8;
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background-color: var(--background-light);
+    border-left: 4px solid var(--secondary-color);
+}
+
+/* Print optimizations */
 @media print {
     body {
         padding: 0.25in;
+        font-size: 11pt;
     }
     
     .title {
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
     }
+
+    .section {
+        page-break-inside: avoid;
+    }
+
+    .header {
+        padding: 1rem 0;
+    }
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 0.25in;
+    }
+
+    .company {
+        flex-direction: column;
+    }
+
+    .date {
+        margin-top: 0.25rem;
+    }
+}
+
+/* Add subtle animations for hover states */
+.bullet:hover {
+    transform: translateX(3px);
+    transition: transform 0.2s ease;
 }
